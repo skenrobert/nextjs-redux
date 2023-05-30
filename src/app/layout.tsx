@@ -1,7 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Providers } from "./redux/providers";
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=''>
+        <div className="container mx-auto bg-red-100">
+          <Providers>{children}</Providers>
+        </div>
+      </body>
     </html>
   )
 }
