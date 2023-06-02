@@ -12,6 +12,7 @@
 # In developer Braches is the Dockerfile for the test with  **[DOCKER](https://docs.docker.com/desktop/install/debian/):**
 
 # Build Stage
+
 FROM node:16-alpine AS BUILD_IMAGE
 WORKDIR /app
 COPY package*.json ./
@@ -21,6 +22,7 @@ RUN npm run build
 
 
 # Production Stage
+
 FROM node:16-alpine AS PRODUCTION_STAGE
 WORKDIR /app
 COPY --from=BUILD_IMAGE /app/package*.json ./
